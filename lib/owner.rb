@@ -81,4 +81,6 @@ class Owner
     return @@all.clear
   end
 
+  #jj was hur
+
 end
