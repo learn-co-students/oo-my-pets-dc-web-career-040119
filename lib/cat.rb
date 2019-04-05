@@ -1,7 +1,8 @@
 class Cat
   # code goes here
     @@all=[]
-  attr_reader :name, :mood
+  attr_reader :name
+  attr_accessor :mood
 
   def initialize(name)
     @name = name
@@ -9,12 +10,10 @@ class Cat
     @@all << self
   end
 
-  def mood=(mood)
-    @mood = mood
-
-  end
-
-  def self.all
+def self.all
     @@all
   end
 end
+
+
+# sintactic sugar Two ways to write the same thing

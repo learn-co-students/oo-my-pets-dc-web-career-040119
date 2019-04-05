@@ -3,6 +3,7 @@ require 'pry'
 class Owner
   # code goes here
 
+
   @@all=[]
   attr_reader :species
   attr_accessor :name, :fish, :dog, :cat, :pets
@@ -12,22 +13,23 @@ class Owner
     @@all<< self
 # binding.pry
 
+
+# class methods
   end
   def self.all
     @@all
   end
   def self.count
-    @@all.length
+    @@all.size
   end
   def self.reset_all
     @@all.clear
   end
 
+# instance methods
   def say_species
     "I am a #{species}."
   end
-
-
 
   def buy_fish(fish_name)
       fish = Fish.new(fish_name)
@@ -74,16 +76,10 @@ class Owner
     while count < len
       @pets[:fishes][count].mood= "happy"
       count += 1
-    end
+      end
   end
 
   def sell_pets
-
-# getting a hash
-# itirting returning keys
-# checking arrays of each key to find the values
-# check the mood of each pets in the array for nervous mood
-# erase
     len =  @pets[:dogs].length
         count = 0
           while count < len
@@ -93,7 +89,7 @@ class Owner
           len =  @pets[:cats].length
           count = 0
           while count < len
-          @pets[:cats][count].mood= "nervous"
+            @pets[:cats][count].mood= "nervous"
           count += 1
         end
         len =  @pets[:fishes].length
@@ -105,12 +101,10 @@ class Owner
       @pets.delete(:dogs)
       @pets.delete(:cats)
       @pets.delete(:fishes)
-
       return @pets
     end
 
     def list_pets
-
     return "I have #{@pets[:fishes].length} fish, #{@pets[:dogs].length} dog(s), and #{@pets[:cats].length} cat(s)."
 
     end
